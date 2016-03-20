@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '1.2.3'
+}
+repositories {
+    jcenter()
+}
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+mainClassName = "org.dabolichin.mrental.Application"
+
+dependencies {
+    compile 'io.vertx:vertx-web:3.2.1'
+    compile 'com.javaslang:javaslang:2.0.0-RC4'
+    compile 'com.javaslang:javaslang-jackson:2.0.0-RC4'
+    compile 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.7.3'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.6'
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+    testCompile 'com.nagternal:spock-genesis:0.4.0'
+    testCompile 'io.vertx:vertx-unit:3.2.1'
+    testCompile 'com.jayway.restassured:rest-assured:2.8.0'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.11'
+}
