@@ -10,7 +10,7 @@ Here we have 3 main events:
 * movie returned
 * points earned
 
-Replaying first those events in chronological order builds current state for any
+Replaying those events in chronological order builds current state for any
 rental transaction. In CRUD-style approach Rental Transaction would have to be mutated when movies are returned.
 
 In real life proper event-storing mechanism together with even-handlers should be used.
