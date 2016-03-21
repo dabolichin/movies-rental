@@ -10,8 +10,8 @@ Here we have 3 main events:
 * movie returned
 * points earned
 
-Replaying those events in chronological order builds current state for any
-rental transaction. In CRUD-style approach Rental Transaction would have to be mutated when movies are returned.
+Replaying those events in chronological order builds current state for anyrental transaction.
+In CRUD-style approach Rental Transaction would have to be mutated when movies are returned.
 
 In real life proper event-storing mechanism together with even-handlers should be used.
 Here results of events processing are pretty straight-forward.
@@ -36,9 +36,10 @@ For building and running the solution use:
 ./gradlew run
 ```
 This will start web-application with following end-points:
-* http://localhost:8080/api/v1/customers - for adding/retrieving customers
-* http://localhost:8080/api/v1/movies - for adding/retrieving movies
-* http://localhost:8080/api/v1/rentals - for renting/returning movies
+* http://localhost:8080/api/v1/customers - GET/POST for retrieving/adding customers
+* http://localhost:8080/api/v1/movies - GET/POST for retrieving/adding movies
+* http://localhost:8080/api/v1/rentals - POST for renting movies
+* http://localhost:8080/api/v1/rentals/{id}/returns - POST for returning movies
 
 For adding new customer use:
 ```
