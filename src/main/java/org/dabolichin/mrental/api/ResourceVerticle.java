@@ -85,7 +85,9 @@ public abstract class ResourceVerticle<T, R, ID> extends AbstractVerticle {
     }
 
     protected void addOne(RoutingContext routingContext) {
-        Try.of(() -> Json.decodeValue(routingContext.getBodyAsString(), resourceClass))
+        String body = routingContext.getBodyAsString();
+        log.info(body);
+        Try.of(() -> Json.decodeValue(body, resourceClass))
                 .map(resourceMapper::to)
                 .flatMap(c -> saveEntity(routingContext, c, 201, "Failed to add " + resourceName()));
     }

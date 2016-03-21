@@ -16,7 +16,7 @@ public class MoviesVerticle extends ResourceVerticle<Movie, MovieResource, Strin
 
     @Override
     protected String resourceUrlPart() {
-        return "moviesToReturn";
+        return "movies";
     }
 
     @Override
